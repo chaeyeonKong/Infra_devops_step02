@@ -61,4 +61,4 @@ jobs:
       - name: docker compose 실행
         run: |
           cd /home/kosa/Infra_devops_step02 #경로를 지정해줘야함.
-          docker compose -d -f docker-compose_nginx.yml up # 포그라운드로 돌면 터미널 끊기면 안되기에,, 백그라운드로 돌도록 함
+          docker compose -f docker-compose_nginx.yml up -d # 포그라운드로 돌면 터미널 끊기면 안되기에,, 백그라운드로 돌도록 함
