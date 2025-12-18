@@ -56,5 +56,5 @@ jobs:
           password: ${{env.DOCKER_PASSWORD}}
 
       - name: docker image pull
-        run: docker pull ${{env.DOCKER_USERNAME}}/devops_step2:v1.0 .
+        run: docker pull ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
         
