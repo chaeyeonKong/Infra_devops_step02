@@ -3,6 +3,11 @@ name: Spring boot docker image CI/CD
 on:
   push:
     branches: [ main ]
+
+env:
+  DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,11 +38,11 @@ jobs:
     - name: docker login
       uses: docker/login-action@v1
       with:
-        username: chaeyeonkong
-        password: ${{secrets.DOCKER_PASSWORD}}
+        username: ${{env.DOCKER_USERNAME}}
+        password: ${{env.DOCKER_PASSWORD}}
 
     - name: docker image 허브에 저장
-      run: docker push chaeyeonkong/devops_step2:v1.0
+      run: docker push ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
     
   deploy:
     needs: build
@@ -47,9 +52,9 @@ jobs:
       - name: docker login
         uses: docker/login-action@v1
         with:
-          username: chaeyeonkong
-          password: ${{secrets.DOCKER_PASSWORD}}
+          username: ${{env.DOCKER_USERNAME}}
+          password: ${{env.DOCKER_PASSWORD}}
 
       - name: docker image pull
-        run: docker pull chaeyeonkong/devops_step2:v1.0
+        run: docker pull ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
         
