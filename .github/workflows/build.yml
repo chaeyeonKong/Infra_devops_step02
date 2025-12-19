@@ -16,7 +16,7 @@ jobs:
     #소스 복사
     #- name: 소스 복사
     # run: git clone 머시기!!!devops_step2
-    # - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     # - name: Setup JDK17 # 자바를 개발서버 pc(master)에 직접 설치했기에 필요없는 단계
     #   uses: actions/setup-java@v3
