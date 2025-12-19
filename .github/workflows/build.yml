@@ -106,6 +106,6 @@ jobs:
     - name: 운영 서버로 file 복사 및 실행
       run: |
         cd Infra_devops_step02
-        scp ./docker-compose_nginx.yml aws-mater
-        scp -r ./nginx/nginx.config aws-master
+        scp ./docker-compose_nginx.yml aws-mater:~
+        scp ./nginx/nginx.config aws-master:~/nginx/nginx.conf
         ssh aws-master ./run.sh > /dev/null
