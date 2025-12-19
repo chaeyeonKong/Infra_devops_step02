@@ -49,8 +49,8 @@ jobs:
       with:
         name: my-artifact
         path: |
-        docker-compose_nginx.yml
-        nginx/nginx.conf
+          docker-compose_nginx.yml
+          nginx/nginx.conf
         
   deploy:
     needs: build
