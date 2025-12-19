@@ -36,7 +36,7 @@ jobs:
       - name: Test with gradle
         run: |
           cd Infra_devops_step02
-          ./gradlew --info task
+          ./gradlew --info test
 
       - name: Spring boot 실행 파일 생성
         run: |
@@ -96,5 +96,4 @@ jobs:
         
       - name: docker compose 실행
         run: |
-          cd /home/kosa/Infra_devops_step02 #경로를 지정해줘야함.
           docker compose -f docker-compose_nginx.yml up -d  # 포그라운드로 돌면 터미널 끊기면 안되기에,, 백그라운드로 돌도록 함
