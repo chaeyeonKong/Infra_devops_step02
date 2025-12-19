@@ -107,5 +107,5 @@ jobs:
       run: |
         cd Infra_devops_step02
         scp ./docker-compose_nginx.yml aws-master:~
-        scp ./nginx/nginx.config aws-master:~/nginx/nginx.conf
+        scp ./nginx/nginx.conf aws-master:~/nginx/nginx.conf
         ssh aws-master ./run.sh > /dev/null
